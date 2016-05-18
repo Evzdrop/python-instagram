@@ -161,6 +161,8 @@ class InstagramAPITests(unittest.TestCase):
 
         self.assertEqual( False, hasattr(image, 'videos') )
 
+        self.assertEqual(image.comments, 1)
+
         video = media[1]
         self.assertEqual(
                 video.get_standard_resolution_url(),
@@ -177,6 +179,8 @@ class InstagramAPITests(unittest.TestCase):
         self.assertEqual(
                 video.get_thumbnail_url(),
                 "http://distilleryimage2.ak.instagram.com/11f75f1cd9cc11e2a0fd22000aa8039a_5.jpg")
+
+        self.assertEqual(video.comments, 2)
 
 
 
